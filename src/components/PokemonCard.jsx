@@ -13,7 +13,7 @@ function PokemonCard ({ pokemonList, pokemonView }) {
     
     return (
         viewList.map((view) => 
-        <figure>
+        <figure key={view.name}>
             {view.imgSrc === undefined ? <p>???</p> : <img src= {view.imgSrc} alt="" /> }
             <figcaption>
                 {view.name}
