@@ -1,21 +1,25 @@
 import PropTypes from "prop-types";
 
 
-function PokemonCard ({ pokemon }) {
-    /*console.log(props);*/
-    console.log(pokemon);
-    PokemonCard.propTypes = {
+function PokemonCard ({ pokemonList, pokemonView }) {
+    /*PokemonCard.propTypes = {
         pokemon:PropTypes.shape({
         name: PropTypes.string.isRequired,
         imgSrc : PropTypes.string,
         })
-    }
+    }*/
+
+    let pok = pokemonList.filter((poke) => poke.name === pokemonView)
     
     return (
         <figure>
-            {pokemon.imgSrc === undefined ? <p>???</p> : <img src= {pokemon.imgSrc} alt="" /> }
+            {console.log(pok[0].name)}
+            {console.log(pokemonList[0].name === pokemonView)}
+            {console.log(pokemonList.length)}
+            {console.log("pokemonview :" + pokemonView)}
+            {pok[0].imgSrc === undefined ? <p>???</p> : <img src= {pok[0].imgSrc} alt="" /> }
             <figcaption>
-                {pokemon.name}
+                {pokemonView.name}
             </figcaption>
         </figure>
     )
