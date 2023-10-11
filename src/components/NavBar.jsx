@@ -9,16 +9,15 @@ function NavBar({pokemonList, setPokemon, pokemonView}){
     setCount(pokemonIndex - 1)
   }
 */
-  const ClickPokemon = (poke) => {
-    console.log("click" + poke.target.value);
-    setPokemon(poke.target.value);
+  const ClickPokemon = (e) => {
+    setPokemon(e.target.value);
+    
   }
 
 return(
     <div>
       {pokemonList.map((pokemon) => 
       <button onClick={ClickPokemon} value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
-      {console.log("jesuis laaaaaa" + pokemonView)}
     </div>
 )
 }

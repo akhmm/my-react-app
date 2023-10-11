@@ -5,7 +5,7 @@ import { useState } from "react";
 function App(){
   
   //const [pokemonIndex, setCount] = useState(0);
-  const [pokemonView, setPokemon ] = useState(pokemonList[0])
+  const [pokemonView, setPokemon ] = useState(pokemonList[3].name)
 
   
   return(
@@ -13,7 +13,6 @@ function App(){
         
         <NavBar /*pokemonIndex={pokemonIndex} setCount={setCount}*/ pokemonList={pokemonList} pokemonView={pokemonView} setPokemon={setPokemon} />
         <PokemonCard pokemonList={pokemonList} pokemonView={pokemonView}/>
-        {console.log(pokemonView)}
     </div>
   )
 }
