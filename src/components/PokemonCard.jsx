@@ -9,17 +9,17 @@ function PokemonCard ({ pokemonList, pokemonView }) {
         })
     }*/
 
-    let pok = pokemonList.filter((poke) => poke.name === pokemonView)
+    let viewList = pokemonList.filter((poke) => poke.name === pokemonView)
     
     return (
         <figure>
-            {console.log(pok[0].name)}
+            {console.log(viewList[0].name)}
             {console.log(pokemonList[0].name === pokemonView)}
             {console.log(pokemonList.length)}
             {console.log("pokemonview :" + pokemonView)}
-            {pok[0].imgSrc === undefined ? <p>???</p> : <img src= {pok[0].imgSrc} alt="" /> }
+            {viewList[0].imgSrc === undefined ? <p>???</p> : <img src= {viewList[0].imgSrc} alt="" /> }
             <figcaption>
-                {pokemonView.name}
+                {viewList[0].name}
             </figcaption>
         </figure>
     )
