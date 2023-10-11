@@ -1,14 +1,28 @@
 import PropTypes from "prop-types";
 
 
-function PokemonCard ({ pokemonList, pokemonView }) {
+function PokemonCard ({ pokemonList, pokemonView, pokemonIndex }) {
     PokemonCard.propTypes = {
         pokemon:PropTypes.shape({
         name: PropTypes.string.isRequired,
         imgSrc : PropTypes.string,
         })
     }
-    {console.log(pokemonView)}
+    
+    return (
+        <figure>
+            {pokemonList[pokemonIndex].imgSrc === undefined ? <p>???</p> : <img src= {pokemonList[pokemonIndex].imgSrc} alt="" /> }
+            <figcaption>
+                {pokemonList[pokemonIndex].name}
+            </figcaption>
+        </figure>
+    )
+    
+}
+export default PokemonCard;
+
+/*
+{console.log(pokemonView)}
     let viewList = pokemonList.filter((poke) => poke.name === pokemonView)
     
     return (
@@ -19,11 +33,9 @@ function PokemonCard ({ pokemonList, pokemonView }) {
                 {view.name}
             </figcaption>
         </figure>)
-    )   
-}
-export default PokemonCard;
+    )
 
-
+*/
 
 
      /*   <figure>

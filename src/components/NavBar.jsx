@@ -1,4 +1,4 @@
-function NavBar({pokemonList, setPokemon, pokemonView}){
+function NavBar({pokemonList, setPokemon, setPokemonindex, /*pokemonView*/}){
 /*function NavBar({pokemonIndex, setCount, pokemonList, setPokemon, pokemonView }){*/
 
 /*  const incriment = () => {
@@ -9,20 +9,36 @@ function NavBar({pokemonList, setPokemon, pokemonView}){
     setCount(pokemonIndex - 1)
   }
 */
-  const ClickPokemon = (e) => {
-    setPokemon(e.target.value);
+
+
+  const ClickPokemon = (index) => {
+    setPokemonindex(index);
     
   }
 
 return(
     <div>
-      {pokemonList.map((pokemon) => 
-      <button onClick={ClickPokemon} value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
+      {pokemonList.map((pokemon, index) => 
+      <button onClick={() => ClickPokemon(index) } value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
     </div>
 )
 }
 
 export default NavBar;
+
+/* version filter with name
+  const ClickPokemon = (e) => {
+    setPokemon(e.target.value);
+    
+  }
+
+/*return(
+    <div>
+      {pokemonList.map((pokemon) => 
+      <button onClick={ClickPokemon} value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
+    </div>
+)*/
+
 
 /*<div>
         {pokemonIndex > 0 
