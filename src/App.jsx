@@ -1,31 +1,16 @@
 import PokemonCard from "./components/PokemonCard"
+import NavBar from "./components/NavBar"
 import { useState } from "react";
 
 function App(){
   
   const [pokemonIndex, setCount] = useState(0);
 
-  const incriment = () => {
-    setCount(pokemonIndex + 1)
-  }
-  
-  const decriment = () => {
-    setCount(pokemonIndex - 1)
-  }
 
   return(
-    <div>
-      <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-      {pokemonIndex > 0 
-      ? <button onClick={decriment}>"Précédent"</button> 
-      : <></> }
-
-      {pokemonIndex < pokemonList.length - 1
-      ? <button onClick={incriment}>"Suivant"</button>
-      : <></>
-      }
-     
-      
+      <div>
+        <NavBar pokemonIndex={pokemonIndex} setCount={setCount} pokemon={pokemonList} />
+        <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
     </div>
   )
 }
