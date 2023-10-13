@@ -1,18 +1,24 @@
+
 import PokemonCard from "./components/PokemonCard"
 import NavBar from "./components/NavBar"
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App(){
   
   const [pokemonIndex, setPokemonindex] = useState(0);
   //const [pokemonView, setPokemon ] = useState("pikachu")
 
+  useEffect(() => {
+    alert("hello pokemon trainer :)")
+  })
   
   return(
       <div>
         
         <NavBar pokemonIndex={pokemonIndex} /*setCount={setCount}*/ pokemonList={pokemonList} setPokemonindex={setPokemonindex}/*pokemonView={pokemonView}*/ /*setPokemon={setPokemon}*/ />
         <PokemonCard pokemonList={pokemonList} /*pokemonView={pokemonView}*/ pokemonIndex={pokemonIndex}/>
+      
     </div>
   )
 }

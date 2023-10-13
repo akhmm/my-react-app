@@ -52,5 +52,20 @@ export default PokemonCard;
 
     
 
+/* 下記の場合は&&がないと、存在しないindexを選択した際に、.imgSrcは存在しないよというエラーとなる
 
+function PokemonCard() {
+
+    const pokemon = pokemonList[2];
+
+    return pokemon && 
+        pokemon.imgSrc ?
+        <figure>
+            <img src={pokemon.imgSrc} alt={pokemon.imgSrc} />
+            <figcaption>{pokemon.name}</figcaption>
+        </figure> :
+        <p>???</p>
+
+}
+*/
 

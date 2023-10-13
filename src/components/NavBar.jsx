@@ -11,15 +11,16 @@ function NavBar({pokemonList, setPokemon, setPokemonindex, /*pokemonView*/}){
 */
 
 
-  const ClickPokemon = (index) => {
+  const ClickPokemon = (index,pokemonName) => {
     setPokemonindex(index);
+    pokemonName === "pikachu" && alert("pika pikachu !!!")
     
   }
 
 return(
     <div>
       {pokemonList.map((pokemon, index) => 
-      <button onClick={() => ClickPokemon(index) } value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
+      <button onClick={() => ClickPokemon(index, pokemon.name) } value={pokemon.name} key={pokemon.name}>{pokemon.name}</button>)}
     </div>
 )
 }
